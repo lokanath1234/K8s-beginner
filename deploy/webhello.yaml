@@ -16,7 +16,7 @@ spec:
     - key: app
       operator: In
       values: ["lsahoodeploymentnew"]
- replicas: 4
+ replicas: 5
  template: 
     metadata: 
       name: lsahoonewpoddeployment

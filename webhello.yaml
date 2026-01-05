@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: my-value
+  generateName: lsahoodeployment-other
+  labels:
+    app: "example-app"
+    description: "something"
+  annotations:
+    version: "1.0"
+    owner: "lsahoo"
+spec: 
+ selector:
+  matchExpressions:
+    - key: app
+      operator: In
+      values: ["lsahoodeploymentnew"]
+ replicas: 4
+ template: 
+    metadata: 
+      name: lsahoonewpoddeployment
+      generateName: somedifferentnameforcontainer
+      namespace: lsahoo
+      labels:
+        app: lsahoodeploymentnew
+    spec:
+      containers:
+      - name: lsahoonewcontainer
+        image: lokanath123/k8s-web-hello:latest
+        ports:
+        - containerPort: 8080

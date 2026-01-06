@@ -3,7 +3,7 @@ kind: Deployment
 metadata: 
   name: my-value
   generateName: lsahoodeployment-other
-  namespace: lsahoo
+  namespace: argocd
   labels:
     app: "example-app"
     description: "something"
@@ -21,7 +21,7 @@ spec:
     metadata: 
       name: lsahoonewpoddeployment
       generateName: somedifferentnameforcontainer
-      namespace: default
+      namespace: lsahoo
       labels:
         app: lsahoodeploymentnew
     spec:
